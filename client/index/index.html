@@ -9,12 +9,20 @@
 </body>
 
 <template name="index">
-	<div id="profiles">
-		{{#each profile}}
-			{{> profile}}
-		{{/each}}
-	</div>
+	{{#if gift}}
+		{{> gift}}
+	{{else}}
+		<div id="profiles">
+			{{#each profile}}
+				{{> profile}}
+			{{/each}}
+		</div>
+	{{/if}}
 	{{> scripts}}
+</template>
+
+<template name="gift">
+	GIFT CODE
 </template>
 
 <template name="profile">
@@ -32,7 +40,7 @@
 			<button type="button" class="btn btn-default btn-lg btn-like">
 			  <span class="glyphicon glyphicon-heart">{{likes}}</span>
 			</button>			
-			<button type="button" class="btn btn-default btn-lg">
+			<button type="button" class="btn btn-default btn-lg btn-gift">
 			  <span class="glyphicon glyphicon-gift"></span>
 			</button>
 		</div>
