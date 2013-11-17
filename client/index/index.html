@@ -1,0 +1,56 @@
+<head>
+ 	<title>Daily Grace</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="owl.carousel.css">
+</head>
+
+<body>
+  {{> index}}
+</body>
+
+<template name="index">
+	<div id="profiles">
+		{{#each profile}}
+			{{> profile}}
+		{{/each}}
+	</div>
+	{{> scripts}}
+</template>
+
+<template name="profile">
+	<div class="profile" pid="{{_id}}">
+		<div class="title">
+			<a href="{{url}}">{{producer}}</a>
+		</div>
+		<div class="content">
+			{{content}}
+		</div>
+		{{>image_carousel}}
+		<div>
+			<button type="button" class="btn btn-default btn-lg">
+			  <span class="glyphicon glyphicon-heart"></span>
+			</button>			
+			<button type="button" class="btn btn-default btn-lg">
+			  <span class="glyphicon glyphicon-gift"></span>
+			</button>
+		</div>
+	</div>
+</template>
+
+<template name="image_carousel">
+	<div class="images owl-carousel" id="img-carousel-{{_id}}">
+		{{#each images}}
+			{{> image_template}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="image_template">
+	<div>
+		<img src="{{this}}" />
+	</div>
+</template>
+
+<template name="scripts">
+	<script src="owl.carousel.min.js"></script>
+</template>
