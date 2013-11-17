@@ -33,7 +33,8 @@ if (Meteor.isServer) {
 					"images" : testData[i]['images'],
 					"items" : testData[i]['items'],
 					"url" : testData[i]['url'],
-					"producer" : testData[i]['producer']
+					"producer" : testData[i]['producer'],
+          "likes" : 0
 				});
 				console.log(id);
 			}
